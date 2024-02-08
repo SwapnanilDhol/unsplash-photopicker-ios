@@ -14,7 +14,12 @@ class PhotoView: UIView {
 
     private var currentPhotoID: String?
     private var imageDownloader = ImageDownloader()
-    private var screenScale: CGFloat { return UIScreen.main.scale }
+    private var screenScale: CGFloat { 
+        #if os(visionOS)
+        return 1.0
+        #else
+        return UIScreen.main.scale
+     }
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var gradientView: GradientView!
