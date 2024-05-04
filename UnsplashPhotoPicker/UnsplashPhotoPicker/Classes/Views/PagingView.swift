@@ -16,9 +16,10 @@ class PagingView: UICollectionReusableView {
     static var reuseIdentifier = "PagingView"
 
     private let spinner: UIActivityIndicatorView = {
-        let spinner = UIActivityIndicatorView(style: .gray)
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-        return spinner
+      let spinner = UIActivityIndicatorView(style: .medium)
+      spinner.translatesAutoresizingMaskIntoConstraints = false
+      spinner.hidesWhenStopped = true
+      return spinner
     }()
 
     var isLoading = false {

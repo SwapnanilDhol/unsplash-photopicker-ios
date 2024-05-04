@@ -19,6 +19,7 @@ class PhotoView: UIView {
         return 1.0
         #else
         return UIScreen.main.scale
+        #endif
      }
 
     @IBOutlet weak var imageView: UIImageView!
